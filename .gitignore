@@ -1,0 +1,6 @@
+esp32/secrets.h
+esp32/.pio/
+node_modules/
+__pycache__/
+*.pyc
+.env
