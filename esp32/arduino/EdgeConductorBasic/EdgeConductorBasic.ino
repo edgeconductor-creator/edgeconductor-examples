@@ -16,9 +16,9 @@
 #include <ArduinoJson.h>
 #include "secrets.h"
 
-#define TOPIC_TELEMETRY  "ec/" DEVICE_SERIAL "/telemetry"
-#define TOPIC_OTA        "ec/" DEVICE_SERIAL "/ota"
-#define TOPIC_SHADOW_GET "ec/" DEVICE_SERIAL "/shadow/get"
+#define TOPIC_TELEMETRY  "devices/" DEVICE_SERIAL "/telemetry"
+#define TOPIC_CONFIG     "devices/" DEVICE_SERIAL "/config"
+#define TOPIC_OTA        "devices/" DEVICE_SERIAL "/ota"
 
 WiFiClientSecure tlsClient;
 PubSubClient     mqtt(tlsClient);
@@ -50,8 +50,8 @@ void connectMqtt() {
         Serial.printf("MQTT → %s:%d … ", MQTT_HOST, MQTT_PORT);
         if (mqtt.connect(DEVICE_SERIAL, MQTT_USER, MQTT_PASS)) {
             Serial.println("connected");
+            mqtt.subscribe(TOPIC_CONFIG);
             mqtt.subscribe(TOPIC_OTA);
-            mqtt.publish(TOPIC_SHADOW_GET, "{}");
         } else {
             Serial.printf("failed (rc=%d) retry in 5s\n", mqtt.state());
             delay(5000);

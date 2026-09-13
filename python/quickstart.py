@@ -13,11 +13,10 @@ import time
 import random
 
 # ── Config ────────────────────────────────────────────────────────────────────
-API_KEY     = "ec_live_YOUR_API_KEY"   # from Dashboard → Settings → API Keys
-DEVICE_ID   = "MY-DEVICE-001"         # unique serial for your device
-BASE_URL    = "https://services.edgeconductor.com/registry"
+API_KEY   = "ec_live_YOUR_API_KEY"   # from Dashboard → Settings → API Keys
+DEVICE_ID = "MY-DEVICE-001"          # unique serial for your device
 
-ec = Client(api_key=API_KEY, base_url=BASE_URL)
+ec = Client(api_key=API_KEY)  # connects to services.edgeconductor.com
 
 # ── Step 1: Register device (safe to call multiple times) ─────────────────────
 print("Registering device...")

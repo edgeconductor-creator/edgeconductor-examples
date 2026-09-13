@@ -8,7 +8,7 @@ Connect your devices to a live IoT dashboard in minutes — no backend to build,
 
 ## Quick Start
 
-1. **Create a free account** → [edgeconductor.com/register](https://ec-platform-ten.vercel.app/register)
+1. **Create a free account** → [edgeconductor.com/register](https://edgeconductor.com/register)
 2. **Add a device** in the dashboard — copy your `device_id` and `api_key`
 3. **Run an example** below
 
@@ -16,12 +16,15 @@ Connect your devices to a live IoT dashboard in minutes — no backend to build,
 
 ## Examples
 
-| Example | Description |
-|---------|-------------|
-| [esp32/](esp32/) | Connect an ESP32 via MQTT — send telemetry + receive OTA updates |
-| [python/](python/) | Python SDK — register device, send telemetry, listen for commands |
-| [javascript/](javascript/) | Node.js SDK — same flow for server-side or Raspberry Pi use |
-| [postman/](postman/) | REST API collection — explore every endpoint manually |
+| Example | Hardware | Description |
+|---------|----------|-------------|
+| [esp32/](esp32/) | ESP32 (PlatformIO) | MQTT TLS — telemetry + config + OTA |
+| [esp32/arduino/](esp32/arduino/) | ESP32 (Arduino IDE) | Same, .ino format for Arduino IDE |
+| [esp8266/](esp8266/) | ESP8266 / NodeMCU | WiFi MQTT TLS via PlatformIO |
+| [raspberry-pi/](raspberry-pi/) | RPi / Linux | Python paho-mqtt — any Linux SBC |
+| [stm32/](stm32/) | STM32 + ESP8266 AT | AT command WiFi coprocessor |
+| [python/](python/) | Any device | Python SDK quickstart |
+| [javascript/](javascript/) | Node.js / RPi | Node.js SDK quickstart |
 
 ---
 
@@ -48,7 +51,7 @@ Your Device  ──MQTT──▶  EdgeConductor Cloud  ──▶  Dashboard
 |---------|-----|
 | MQTT Broker | `services.edgeconductor.com:8883` (TLS) |
 | REST API | `https://services.edgeconductor.com` |
-| Dashboard | `https://ec-platform-ten.vercel.app` |
+| Dashboard | `https://edgeconductor.com` |
 
 ---
 
